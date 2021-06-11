@@ -1,20 +1,26 @@
-class SlingShot{
-    constructor(body1,point2){
-        var options = {
+class SlingShot
+{
+    constructor(body1,point2)
+    {
+        var options = 
+            {
             bodyA :body1,
             pointB :point2,
             stiffness : 0.1,
             length : 20
 
-        }
+            }
         this.constraint = Constraint.create(options);
         World.add(world,this.constraint);
     }
-    fly(){
+    fly()
+    {
         this.constraint.bodyA = null
     }
-    display(){
-        if(this.constraint.bodyA){
+    display()
+    {
+        if(this.constraint.bodyA)
+        {
         var posbody1 = this.constraint.bodyA.position;
         var posbody2 = this.constraint.pointB;
         push ();
